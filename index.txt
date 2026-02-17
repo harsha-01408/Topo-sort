@@ -1,0 +1,10 @@
+You are given a DAG (Directed Acyclic Graph) with N nodes labeled 1..N and M directed edges. An edge u -> v means you can go from u to v.
+
+For each node i, compute the maximum number of nodes in any directed path that passes through i (the path may start before i and/or end after i, but must include i).
+
+Return/print N values: the answer for nodes 1..N.
+
+Constraints: 1 ≤ N, M ≤ 2 * 10^5 (so you need about O(N + M) or O((N+M) log N) time).
+
+
+  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
