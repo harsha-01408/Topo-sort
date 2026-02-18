@@ -8,3 +8,22 @@ Constraints: 1 ≤ N, M ≤ 2 * 10^5 (so you need about O(N + M) or O((N+M) log 
 
 
   XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+You are given an undirected tree with n vertices labeled from 1 to n (a connected graph with n − 1 edges).
+
+In one operation, you may choose any vertex whose current degree is even (including degree 0), and delete it from the graph along with all edges incident to it. After deletion, the remaining graph may split into multiple connected components (a forest), and degrees are updated accordingly.
+
+Determine whether it is possible to delete all vertices by repeatedly applying this operation.
+
+If it is not possible, output "NO".
+If it is possible, output "YES" and output one valid order of deleting the vertices (a permutation of 1..n) such that each vertex has even degree at the moment it is deleted.
+
+Input:
+- An integer n
+- n − 1 lines each containing two integers u and v denoting an edge of the tree
+
+Output:
+- "NO" if no valid deletion order exists
+- Otherwise "YES" and a valid deletion order
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
