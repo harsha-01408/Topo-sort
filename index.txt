@@ -27,3 +27,57 @@ Output:
 - Otherwise "YES" and a valid deletion order
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+You are given two arrays of length n:
+
+- cost, where cost[i] is the cost of placing a filter on server i
+- nextServer, where nextServer[i] is the server that a packet moves to from server i
+
+Each server sends a packet to exactly one server, so starting from any server and repeatedly following nextServer will eventually enter a cycle.
+
+A packet is considered caught if it reaches a server that has a filter installed.
+
+Choose a set of servers on which to install filters such that a packet starting from any server is guaranteed to be caught eventually.
+
+Return the minimum total cost required.
+
+Notes:
+- Servers are numbered from 1 to n.
+- Since every server has exactly one outgoing edge, the graph is made of directed chains leading into directed cycles.
+- To guarantee that all packets are caught, every directed cycle must contain at least one filtered server.
+
+Example 1:
+Input:
+cost = [5, 2, 7, 10]
+nextServer = [2, 3, 1, 3]
+
+Output:
+2
+
+Explanation:
+Servers 1, 2, and 3 form a cycle: 1 -> 2 -> 3 -> 1.
+Server 4 leads into that cycle.
+Placing a filter on server 2 is enough to catch packets starting from any server.
+The minimum cost in that cycle is 2, so the answer is 2.
+
+Example 2:
+Input:
+cost = [8, 4, 6, 3, 5, 2]
+nextServer = [2, 1, 4, 5, 3, 5]
+
+Output:
+7
+
+Explanation:
+There are two cycles:
+- 1 -> 2 -> 1, with minimum filter cost 4
+- 3 -> 4 -> 5 -> 3, with minimum filter cost 3
+Server 6 leads into the second cycle.
+So the minimum total cost is 4 + 3 = 7.
+
+Constraints:
+- 1 <= n <= 2 * 10^5
+- 1 <= cost[i] <= 10^9
+- 1 <= nextServer[i] <= n
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
