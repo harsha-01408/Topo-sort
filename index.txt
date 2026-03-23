@@ -81,3 +81,71 @@ Constraints:
 - 1 <= nextServer[i] <= n
 
 XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+
+You are given an integer N representing N microservices labeled from 0 to N - 1.
+
+For each service i, you are given a list deps[i] containing the services that must already be started before service i can start.
+
+The system tries to start services in repeated cycles:
+
+- In each cycle, services are checked in order from 0 to N - 1.
+- If all dependencies of a service have already been started, that service starts immediately.
+- Otherwise, it is skipped for that cycle.
+- The process repeats until all services are started.
+
+A service started earlier in the same cycle can satisfy dependencies for services checked later in that same cycle.
+
+Return the minimum number of cycles required to start all services.
+If it is impossible to start all services because of cyclic dependencies, return -1.
+
+Example 1:
+Input:
+N = 2
+deps = [[1], []]
+
+Output:
+2
+
+Explanation:
+Cycle 1:
+- Service 0 cannot start because service 1 is not started yet.
+- Service 1 starts.
+
+Cycle 2:
+- Service 0 now starts.
+
+Example 2:
+Input:
+N = 2
+deps = [[], [0]]
+
+Output:
+1
+
+Explanation:
+Cycle 1:
+- Service 0 starts.
+- Service 1 starts later in the same cycle because service 0 is already started.
+
+Example 3:
+Input:
+N = 3
+deps = [[1], [0], []]
+
+Output:
+-1
+
+Explanation:
+Services 0 and 1 depend on each other, so it is impossible to start all services.
+
+Constraints:
+- 1 <= N <= 2 * 10^5
+- 0 <= deps[i].length <= N - 1
+- The total number of dependencies across all services is at most 2 * 10^5
+- All dependency indices are in the range [0, N - 1]
+- A service does not depend on itself
+
+Function signature:
+int minCycles(int N, vector<vector<int>>& deps);
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
